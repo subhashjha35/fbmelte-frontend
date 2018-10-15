@@ -1,0 +1,7 @@
+#welcome-box{
+    background-image: url("/assets/img/bg/food_center.png");
+    background-position: center;
+    background-color:#666;
+    background-repeat:no-repeat;
+    background-size:50% auto;
+}
