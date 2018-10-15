@@ -16,7 +16,7 @@ pages:
   environment:
     name: production
   script:
-    - ng build --prod --output-path=public --base-href /frontend/
+    - ng build --prod --output-path=public --base-href /
   only:
     - master
   artifacts:
