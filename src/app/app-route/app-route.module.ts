@@ -5,7 +5,8 @@ import { RandomComponent } from '../recipe/random/random.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'recipe', component: RandomComponent }
+  { path: 'recipe', component: RandomComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
