@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <img src="{{meal.strMealThumb}}" class="img-fluid" alt="">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 bg-faded">
       <h3>{{meal.strMeal}}</h3>
       Category: <a href="cat.html" class="text-success">{{meal.strCategory}}</a> Area: <a href="strArea.html" class="text-warning">{{meal.strArea}}</a>
       <p class="text-left">
@@ -11,9 +11,9 @@
       </p>
       <div>
         <h4>Tags</h4>
-        <a href="#" class="alert-success alert p-1 alert-link">{{meal.strTags}}</a>
+        <a *ngIf="(meal.strTags!=null)" href="#" class="alert-success alert p-1 alert-link">{{meal.strTags}}</a>
         <h4>Source</h4>
-        <a href="{{meal.strSource}}" class="alert-success alert p-1 alert-link">{{meal.strSource}}</a>
+        <a *ngIf="(meal.strSource!=null)" href="{{meal.strSource}}" class="alert-success alert p-1 alert-link">{{meal.strSource}}</a>
       </div>
       <iframe width="560" height="315" src="{{meal.strYoutube}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
