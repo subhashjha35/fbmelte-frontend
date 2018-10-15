@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { RandomComponent } from './recipe/random/random.component';
 import { RecipeService } from './service/recipe.service';
 import { HttpClientModule} from '@angular/common/http';
+import { MealsDetailsComponent } from './recipe/meals-details/meals-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    RandomComponent
+    RandomComponent,
+    MealsDetailsComponent
   ],
   imports: [
     BrowserModule,
