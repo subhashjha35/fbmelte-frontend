@@ -8,6 +8,10 @@ import { RandomComponent } from './recipe/random/random.component';
 import { RecipeService } from './service/recipe.service';
 import { HttpClientModule} from '@angular/common/http';
 import { MealsDetailsComponent } from './recipe/meals-details/meals-details.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { UserService } from './user.service'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,14 +19,18 @@ import { MealsDetailsComponent } from './recipe/meals-details/meals-details.comp
     HomeComponent,
     HeaderComponent,
     RandomComponent,
-    MealsDetailsComponent
+    MealsDetailsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
