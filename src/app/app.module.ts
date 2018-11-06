@@ -6,12 +6,17 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { RandomComponent } from './recipe/random/random.component';
 import { RecipeService } from './service/recipe.service';
+import { CategoriesService } from './service/categories.service';
 import { HttpClientModule} from '@angular/common/http';
 import { MealsDetailsComponent } from './recipe/meals-details/meals-details.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { UserService } from './user.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CategoriesComponent } from './recipe/categories/categories.component';
+import { CatDetailsComponent } from './recipe/categories/cat-details/cat-details.component';
+import { CatHomeComponent } from './recipe/categories/cat-home/cat-home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RandomComponent,
     MealsDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    WelcomeComponent,
+    CategoriesComponent,
+    CatDetailsComponent,
+    CatHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [RecipeService, UserService],
+  providers: [RecipeService, UserService, CategoriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

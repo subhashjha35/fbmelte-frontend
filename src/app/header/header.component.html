@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom">
   <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" [routerLink]="['']">
           <img src="assets/img/logo/fbm_logo.png" class="img-fluid" style="max-height:24px"><span>FBM</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span> 
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/cat']" routerLinkActive="text-white">Categories</a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['/recipe']" class="nav-link">Random Meal</a>
+              <a [routerLink]="['/recipe']" routerLinkActive="text-white" class="nav-link">Random Meal</a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['/meal']" class="nav-link">Meals Details</a>
+              <a [routerLink]="['/meal']" routerLinkActive="text-white" class="nav-link">Meals Details</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
