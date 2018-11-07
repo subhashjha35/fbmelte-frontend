@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3" *ngFor="let item of catItems">
       <a [routerLink]="['/cat',item.strCategory]" class="text-center ">
-        <div class="card m-md-2">
+        <div class="card m-md-2" onmouseover="this.className='border-success shadow'; this.style.transition='all 0.3s'"  onmouseout="this.className='card m-md-2'">
           <div class="card-body">
             <img src="{{item.strCategoryThumb}}" alt="{{item.strCategory}}" class="img-fluid">
             <h3 class="cat_title">{{item.strCategory}}</h3>

@@ -15,7 +15,7 @@
           <h4>Source</h4>
           <a *ngIf="(meal.strSource!=null)" href="{{meal.strSource}}" class="alert-success alert p-1 alert-link">{{meal.strSource}}</a>
         </div>
-        <iframe width="560" height="315" src="{{meal.strYoutube}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="{{meal.strYoutube | safe:'url'}}" frameborder="0"></iframe>
       </div>
     </div>
   </div>

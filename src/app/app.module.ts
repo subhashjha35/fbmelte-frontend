@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, SafeResourceUrl } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-route/app-route.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CategoriesComponent } from './recipe/categories/categories.component';
 import { CatDetailsComponent } from './recipe/categories/cat-details/cat-details.component';
 import { CatHomeComponent } from './recipe/categories/cat-home/cat-home.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CatHomeComponent } from './recipe/categories/cat-home/cat-home.componen
     WelcomeComponent,
     CategoriesComponent,
     CatDetailsComponent,
-    CatHomeComponent
+    CatHomeComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
