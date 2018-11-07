@@ -13,7 +13,7 @@ export class RandomComponent implements OnInit {
     
   }
   getMeals() {
-    this.recipeService.getRecipe()
+    this.recipeService.getRandomRecipe()
       .subscribe(data => {
         this.meal=data.meals;
         console.log(this.meal);

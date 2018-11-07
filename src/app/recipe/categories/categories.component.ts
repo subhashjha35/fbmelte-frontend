@@ -10,7 +10,6 @@ export class CategoriesComponent implements OnInit {
 
   public catItems;
   constructor(private catService:CategoriesService) { }
-
   getCat() {
     this.catService.getCategories()
       .subscribe(data => {

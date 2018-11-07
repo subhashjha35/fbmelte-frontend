@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'cat', component: WelcomeComponent},
   { path: 'cat/:catName', component: CatDetailsComponent},
   { path: 'recipe', component: RandomComponent },
-  { path: 'meal', component: MealsDetailsComponent },
+  { path: 'meal/:id', component: MealsDetailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: HomeComponent }

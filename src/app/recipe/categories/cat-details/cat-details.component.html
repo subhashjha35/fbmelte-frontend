@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3" *ngFor="let data of catData">
-      <div class="card" style="overflow:hidden;">
-        <div class="card-body text-center p-1">
-          <img src="{{data.strMealThumb}}" alt="{{data.strMeal}}" class="img-fluid">
+      <a [routerLink]="['/meal',data.idMeal]">
+        <div class="card" style="overflow:hidden;">
+          <div class="card-body text-center p-1">
+            <img src="{{data.strMealThumb}}" alt="{{data.strMeal}}" class="img-fluid">
+          </div>
+          <h5 class="text-center" style="position:absolute;bottom:-10px;color:#e6e6e6; background:rgba(0,0,0,0.6);left:0px;width:100%;min-height:50px;">{{data.strMeal}}</h5>
         </div>
-        <h5 class="text-center" style="position:absolute;bottom:-10px;color:#e6e6e6; background:rgba(0,0,0,0.6);left:0px;width:100%;min-height:50px;">{{data.strMeal}}</h5>
-      </div>
+      </a>
     </div>
   </div>
 </div>

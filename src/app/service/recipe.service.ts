@@ -11,7 +11,10 @@ export class RecipeService {
   constructor(private http:HttpClient) {
   }
 
-  getRecipe(): Observable<any> {
+  getRandomRecipe(): Observable<any> {
     return this.http.get('https://www.themealdb.com/api/json/v1/1/random.php');
+  }
+  getRecipe(id): Observable<any> {
+    return this.http.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id);
   }
 }

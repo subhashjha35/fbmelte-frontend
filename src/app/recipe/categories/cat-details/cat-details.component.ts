@@ -11,6 +11,7 @@ export class CatDetailsComponent implements OnInit {
   private sub: any;
   private catName:String;
   catData;
+  
   constructor(private route:ActivatedRoute, private catService:CategoriesService) { }
 
   getCatDetails(str){
