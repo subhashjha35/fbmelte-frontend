@@ -9,6 +9,8 @@ import { WelcomeComponent } from '../welcome/welcome.component';
 import { CatDetailsComponent } from '../recipe/categories/cat-details/cat-details.component';
 import { UserHomeComponent } from '../user/user-home/user-home.component';
 import { IngredientsComponent } from '../recipe/ingredients/ingredients.component';
+import { AreaComponent } from '../recipe/area/area.component';
+import { AreaDetailsComponent } from '../recipe/area/area-details/area-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'me', component: UserHomeComponent },
   { path: 'ingredients', component: IngredientsComponent },
+  { path: 'area', component: AreaComponent },
+  { path: 'area/:areaName', component: AreaDetailsComponent },
   { path: '**', component: HomeComponent },
 
 ];

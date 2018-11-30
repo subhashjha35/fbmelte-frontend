@@ -25,6 +25,8 @@ import { NguCarouselModule } from '@ngu/carousel';
 import { OwlModule } from 'ngx-owl-carousel';
 import { IngredientsComponent } from './recipe/ingredients/ingredients.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AreaComponent } from './recipe/area/area.component';
+import { AreaDetailsComponent } from './recipe/area/area-details/area-details.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SafePipe,
     CarouselComponent,
     UserHomeComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    AreaComponent,
+    AreaDetailsComponent
   ],
   imports: [
     BrowserModule,

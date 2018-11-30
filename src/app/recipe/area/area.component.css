@@ -1,0 +1,9 @@
+.cat_title:hover{
+    color:rgba(35,35,35, 1);
+}
+.cat_title{
+    color:rgba(56, 54, 54, 0.897);
+}
+a:hover{
+    text-decoration:none !important;
+}
