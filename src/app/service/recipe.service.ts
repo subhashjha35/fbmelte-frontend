@@ -17,4 +17,8 @@ export class RecipeService {
   getRecipe(id): Observable<any> {
     return this.http.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id);
   }
+
+  getLatestReceipe():Observable<any>{
+    return this.http.get('https://www.themealdb.com/api/json/v1/1/latest.php');
+  }
 }

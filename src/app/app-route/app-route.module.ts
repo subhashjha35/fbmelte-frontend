@@ -7,6 +7,7 @@ import { LoginComponent } from '../user/login/login.component';
 import { RegisterComponent } from '../user/register/register.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { CatDetailsComponent } from '../recipe/categories/cat-details/cat-details.component';
+import { UserHomeComponent } from '../user/user-home/user-home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'meal/:id', component: MealsDetailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'me', component: UserHomeComponent },
+  { path: '**', component: HomeComponent },
+  { path: 'me', component: UserHomeComponent}
 
 ];
 

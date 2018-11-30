@@ -1,0 +1,21 @@
+<div class="container">
+    <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="sliderItemList">
+        <ngu-tile *nguCarouselDef="let item; let i = index" style="width:50%; display:block;clear:both;float:none">
+            <h3 class="p-3 alert-warning">{{item.name}}</h3>
+            <ngu-carousel #myCarousel [inputs]="carouselTile" (carouselLoad)="carouselTileLoad(i)" [dataSource]="sliderItemList[i].mealsList">
+                <ngu-tile *nguCarouselDef="let item; let j = index" style="min-width:150px;">
+                    <div class="tile" style="position:relative;" [style.background-image]="'url(' + item.strMealThumb + ')'" style="background-position:center;background-size:auto 100%;min-height: 300px;">
+                        <a [routerLink]="['/meal',item.idMeal]" class="">
+                            <div class="tile_title">
+                                {{item.strMeal}}
+                            </div>
+                        </a>
+                    </div>
+                </ngu-tile>
+                <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
+                <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
+            </ngu-carousel>
+    
+        </ngu-tile>
+    </ngu-carousel>
+</div>

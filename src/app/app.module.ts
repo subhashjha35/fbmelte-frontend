@@ -1,4 +1,5 @@
 import { BrowserModule, SafeResourceUrl } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-route/app-route.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,9 @@ import { CategoriesComponent } from './recipe/categories/categories.component';
 import { CatDetailsComponent } from './recipe/categories/cat-details/cat-details.component';
 import { CatHomeComponent } from './recipe/categories/cat-home/cat-home.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { CarouselComponent } from './tools/carousel/carousel.component';
+import { UserHomeComponent } from './user/user-home/user-home.component';
+import { NguCarouselModule } from '@ngu/carousel';
 
 @NgModule({
   declarations: [
@@ -32,14 +36,18 @@ import { SafePipe } from './pipes/safe.pipe';
     CategoriesComponent,
     CatDetailsComponent,
     CatHomeComponent,
-    SafePipe
+    SafePipe,
+    CarouselComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NguCarouselModule
   ],
   providers: [RecipeService, UserService, CategoriesService],
   bootstrap: [AppComponent]
