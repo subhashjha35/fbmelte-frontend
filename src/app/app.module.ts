@@ -22,6 +22,9 @@ import { SafePipe } from './pipes/safe.pipe';
 import { CarouselComponent } from './tools/carousel/carousel.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { NguCarouselModule } from '@ngu/carousel';
+import { OwlModule } from 'ngx-owl-carousel';
+import { IngredientsComponent } from './recipe/ingredients/ingredients.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { NguCarouselModule } from '@ngu/carousel';
     CatHomeComponent,
     SafePipe,
     CarouselComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { NguCarouselModule } from '@ngu/carousel';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NguCarouselModule
+    NguCarouselModule,
+    OwlModule,
+    NgxPaginationModule
   ],
   providers: [RecipeService, UserService, CategoriesService],
   bootstrap: [AppComponent]

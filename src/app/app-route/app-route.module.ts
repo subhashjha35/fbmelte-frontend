@@ -8,6 +8,7 @@ import { RegisterComponent } from '../user/register/register.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { CatDetailsComponent } from '../recipe/categories/cat-details/cat-details.component';
 import { UserHomeComponent } from '../user/user-home/user-home.component';
+import { IngredientsComponent } from '../recipe/ingredients/ingredients.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,8 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'me', component: UserHomeComponent },
+  { path: 'ingredients', component: IngredientsComponent },
   { path: '**', component: HomeComponent },
-  { path: 'me', component: UserHomeComponent}
 
 ];
 

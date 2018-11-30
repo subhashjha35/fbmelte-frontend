@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="sliderItemList">
         <ngu-tile *nguCarouselDef="let item; let i = index" style="width:50%; display:block;clear:both;float:none">
             <h3 class="p-3 alert-warning">{{item.name}}</h3>
@@ -18,4 +18,53 @@
     
         </ngu-tile>
     </ngu-carousel>
-</div>
+</div> -->
+
+<!-- <owl-carousel [options]="mySlideOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+        <div class="item" *ngFor="let image of mySlideImages;let i = index">
+         <div>
+           <img src={{image}}/>
+         </div>
+        </div>
+       </owl-carousel> -->
+
+    <!-- <owl-carousel
+        [options]="{items: 3, dots: true, navigation: true}"
+        [items]="images"
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div class="item" *ngFor="let image of mySlideImages;let i = index">
+            <div class="thumbnail-image" [ngStyle]="{'background':'url(image)'}"><img src="{{image}}" alt=""></div>
+        </div>
+   </owl-carousel> -->
+
+
+   <div class="owl-carousel-holder">
+        <div class="slider-image-section">
+            <h2>Banner Slider Using Owl Casrousel</h2>
+            <owl-carousel
+                [options]="mySlideOptions"
+                [items]="images"
+                [carouselClasses]="['owl-theme', 'sliding']"
+            >
+                <div class="item" *ngFor="let image of mySlideImages;let i = index">
+                    <div>
+                        <img src={{image}}/>
+                    </div>
+                </div>
+            </owl-carousel>
+        </div>
+        <hr/>
+        <div class="carousel-section">
+                <h2>Image Carousel Using Owl Casrousel</h2>
+                <owl-carousel
+                    [options]="myCarouselOptions"
+                    [items]="images"
+                >
+                    <div class="item" *ngFor="let image of myCarouselImages;let i = index">
+                        <div>
+                            <img src={{image}}/>
+                        </div>
+                    </div>
+                </owl-carousel>
+        </div>
+    </div>
