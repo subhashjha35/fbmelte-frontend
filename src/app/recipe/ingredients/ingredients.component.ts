@@ -8,6 +8,7 @@ import { IngredientsService } from 'src/app/service/ingredients.service';
 })
 export class IngredientsComponent implements OnInit {
   public ingList;
+  p: number = 1;
   constructor(private ingService:IngredientsService) { 
     this.ingService.get_ingredients().subscribe( data =>{
       this.ingList=data.meals;

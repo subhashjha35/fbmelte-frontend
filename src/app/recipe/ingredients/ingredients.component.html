@@ -1,11 +1,11 @@
 <div class="list container">
   <div class="row">
-    <div class="card col-md-3" *ngFor="let item of ingList | paginate: { itemsPerPage: 10, currentPage: p }">
+    <div class="card col-md-3" *ngFor="let item of ingList | paginate: { itemsPerPage: 12, currentPage: p }">
       <div class="card-body text-center">
         <img src="https://www.themealdb.com/images/ingredients/{{item.strIngredient}}.png" class="img-fluid img-thumbnail" alt="">
         <h4>{{item.strIngredient}}</h4>
       </div>
     </div>
   </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
 </div>
