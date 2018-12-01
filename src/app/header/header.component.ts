@@ -7,7 +7,9 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  userData;
+  userName;
+  userId;
   isLoggedIn:boolean;
   constructor(private userService:UserService) { 
     this.userService.isLoggedIn().subscribe(val=>this.isLoggedIn=val);
@@ -17,6 +19,14 @@ export class HeaderComponent implements OnInit {
     this.userService.logout();
   }
   ngOnInit() {
+    this.userId=localStorage.getItem('userId');
+    if(this.userId){
+      this.userService.getProfile(this.userId).subscribe(data=>{
+        this.userData=data;
+        console.log(this.userData);
+        this.userName=data.data.name;
+      });
+    }
   }
 
 }
