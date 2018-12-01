@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'area', component: AreaComponent },
   { path: 'area/:areaName', component: AreaDetailsComponent },
+  { path: 'profile', component: UserHomeComponent },
   { path: '**', component: HomeComponent },
 
 ];

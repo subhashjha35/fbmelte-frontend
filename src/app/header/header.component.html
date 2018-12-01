@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background-color: rgba(20,20, 20,0.6) !important;">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background-color: rgba(20,20, 20,0.8) !important;">
   <div class="container">
       <a class="navbar-brand" [routerLink]="['']">
           <img src="assets/img/logo/fbm_logo.png" class="img-fluid" style="max-height:24px"><span>FBM</span>
@@ -22,13 +22,19 @@
               </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
+            <li class="nav-item" *ngIf="(!isLoggedIn)">
+              <a class="btn btn-sm btn-info mt-1 mr-1" [routerLink]="['/login']">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="(!isLoggedIn)">
+              <a class="btn btn-sm btn-light mt-1" [routerLink]="['/register']">Register</a>
+            </li>
+            <li class="nav-item dropdown" *ngIf="(isLoggedIn)">
               <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-circle-o" style="font-size:22px" aria-hidden="true"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLink]="['login']">Login</a>
-                <a class="dropdown-item" [routerLink]="['register']" >Register</a>
+                <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
+                <a class="dropdown-item" (click)="this.logout()">Logout</a>
               </div>
             </li>
           </ul>

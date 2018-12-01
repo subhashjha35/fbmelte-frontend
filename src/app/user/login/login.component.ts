@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../user.service';
+import { UserService } from '../../service/user.service';
+import { Router } from '@angular/router';
 export interface User{
   email:string;
   password:string;
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   userData:User={email:null,password:null};
   error;
   success;
-  constructor(private formBuilder:FormBuilder, private userService:UserService) { }
+  constructor(private formBuilder:FormBuilder, private userService:UserService, private route:Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -44,14 +45,21 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.data();
-    this.userService.loginUser(this.userData).subscribe(data => {
+    console.log(this.userData);
+    this.userService.loginUser(JSON.stringify(this.userData)).subscribe(data => {
       if(data['success']==true){
         this.success="User Logged In";
+        localStorage.setItem('token', data.data.access_token);
+        localStorage.setItem('userId', data.data.id);
+        this.userService.isLoginSubject.next(true);
+        this.route.navigate(['/profile']);
+        this.error=null;
       }
       console.log(data);
     },
     error => {
       this.error=error.error['error'];
+      this.success=null;
       // console.log(error.error);
     });
   }

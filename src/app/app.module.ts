@@ -12,7 +12,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { MealsDetailsComponent } from './recipe/meals-details/meals-details.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
-import { UserService } from './user.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CategoriesComponent } from './recipe/categories/categories.component';
@@ -27,6 +26,7 @@ import { IngredientsComponent } from './recipe/ingredients/ingredients.component
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AreaComponent } from './recipe/area/area.component';
 import { AreaDetailsComponent } from './recipe/area/area-details/area-details.component';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [

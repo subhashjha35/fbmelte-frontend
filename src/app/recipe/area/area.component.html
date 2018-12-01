@@ -4,6 +4,7 @@
         <a [routerLink]="['/area',item.strArea]" class="text-center ">
           <div class="card m-md-2" onmouseover="this.className='border-success shadow'; this.style.transition='all 0.3s'"  onmouseout="this.className='card m-md-2'">
             <div class="card-body">
+              <img src="{{item.strFlagImage}}" class="img-fluid">
               <h3 class="cat_title">{{item.strArea}}</h3>
             </div>
           </div>
