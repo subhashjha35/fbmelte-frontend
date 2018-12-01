@@ -49,3 +49,10 @@ ngu-tile{
     color:#fff;
 }
 .clearfix{clear:both;}
+
+/* [ngStyle]="{'background': 'url('abc.jpg')no-repeat scroll center center / 80px 80px'}" */
+D:\frontend\src\assets\img\flags\flag-of-Canada.png
+
+.thumbnail-image {
+    background: url('../../../assets/img/flags/flag-of-Canada.png') no-repeat scroll center center / 80px 80px ;
+}
