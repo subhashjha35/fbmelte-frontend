@@ -19,11 +19,12 @@ export class UserHomeComponent implements OnInit {
   // myCarouselImages =[1,2,3,4,5,6].map((i)=>`https://picsum.photos/640/480?image=${i}`);
   // mySlideOptions={items: 1, dots: true, nav: false};
   // myCarouselOptions={items: 3, dots: true, nav: true};
-
+  latestRecipe;
+  recommendedRecipe;
   images = [''];
   userData;
   userId:string;
-  constructor(private userService:UserService){
+  constructor(private userService:UserService, private recipeService:RecipeService, private catService:CategoriesService){
     this.userId=localStorage.getItem('userId');
     if(this.userId){
       this.userService.getProfile(this.userId).subscribe(data=>{
@@ -31,6 +32,14 @@ export class UserHomeComponent implements OnInit {
         console.log(this.userData);
       });
     }
+    this.recipeService.getLatestReceipe().subscribe(data=>{
+      this.latestRecipe=data.meals;
+      console.log(this.latestRecipe);
+    })
+    this.catService.getCatDetails('Chicken').subscribe(data=>{
+      this.recommendedRecipe= data.meals;
+      console.log(this.recommendedRecipe);
+    })
   }
   ngOnInit(){
 

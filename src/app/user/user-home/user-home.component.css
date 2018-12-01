@@ -1,58 +1,11 @@
-h1{
-    min-height: 200px;
-    background-color: #ccc;
-    text-align: center;
-    line-height: 200px;
-  }
-  .leftRs {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      bottom: 0;
-      width: 50px;
-      height: 50px;
-      box-shadow: 1px 2px 10px -1px rgb(18, 124, 26);
-      border-radius: 999px;
-      left: 0;
-      background-color:rgb(78, 155, 6);
-      color:#fff;
-  }
-
-  .rightRs {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      bottom: 0;
-      width: 50px;
-      height: 50px;
-      box-shadow: 1px 2px 10px -1px rgb(18, 124, 26);
-      border-radius: 999px;
-      right: 0;
-      background-color:rgb(78, 155, 6);
-      color:#fff;
-  }
-
-ngu-tile{
-    min-height:150px;
-    position:relative;
-    
+.tile{
+    padding:10px;
 }
-
-.tile_title{
+.float-bottom{
     position: absolute;
-    text-align:center;
-    bottom:10px;
-    right:10px;
-    left:10px;
-    padding:5px;
-    background-color:rgba(0, 0, 0, .5);
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-color:rgba(0, 0, 0, 0.884);
     color:#fff;
-}
-.clearfix{clear:both;}
-
-/* [ngStyle]="{'background': 'url('abc.jpg')no-repeat scroll center center / 80px 80px'}" */
-D:\frontend\src\assets\img\flags\flag-of-Canada.png
-
-.thumbnail-image {
-    background: url('../../../assets/img/flags/flag-of-Canada.png') no-repeat scroll center center / 80px 80px ;
 }
