@@ -19,6 +19,8 @@ export class UserHomeComponent implements OnInit {
   // myCarouselImages =[1,2,3,4,5,6].map((i)=>`https://picsum.photos/640/480?image=${i}`);
   // mySlideOptions={items: 1, dots: true, nav: false};
   // myCarouselOptions={items: 3, dots: true, nav: true};
+
+  images = [''];
   userData;
   userId:string;
   constructor(private userService:UserService){

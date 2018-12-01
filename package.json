@@ -31,6 +31,7 @@
     "ng2-card-slider": "^0.1.1",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-pagination": "^3.2.1",
+    "ngx-swiper-wrapper": "^7.1.1",
     "popper.js": "^1.14.4",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
