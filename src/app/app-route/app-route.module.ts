@@ -11,6 +11,7 @@ import { UserHomeComponent } from '../user/user-home/user-home.component';
 import { IngredientsComponent } from '../recipe/ingredients/ingredients.component';
 import { AreaComponent } from '../recipe/area/area.component';
 import { AreaDetailsComponent } from '../recipe/area/area-details/area-details.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'area', component: AreaComponent },
   { path: 'area/:areaName', component: AreaDetailsComponent },
-  { path: 'profile', component: UserHomeComponent },
+  { path: 'profile', component: UserHomeComponent, canActivate: [AuthGuard]},
   { path: '**', component: HomeComponent },
 
 ];
