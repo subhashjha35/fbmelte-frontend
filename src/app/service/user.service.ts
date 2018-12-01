@@ -31,16 +31,16 @@ export class UserService {
   }
 
   loginUser(userData):any{
-    return this.http.post("http://18.222.30.236/backend/users/login/", userData);
+    return this.http.post("https://18.222.30.236/backend/users/login/", userData);
   }
 
   getProfile(id){
-    return this.http.get("http://18.222.30.236/backend/users/"+id+"/");
+    return this.http.get("https://18.222.30.236/backend/users/"+id+"/");
   }
   logout() : void {
     localStorage.removeItem('token');
     this.isLoginSubject.next(false);
-    this.http.post("http://18.222.30.236/backend/users/logout/",{"access_token":localStorage.getItem('token')});
+    this.http.post("https://18.222.30.236/backend/users/logout/",{"access_token":localStorage.getItem('token')});
     this.route.navigate(['\login']);
   }
 }
