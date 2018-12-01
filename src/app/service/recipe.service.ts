@@ -21,4 +21,17 @@ export class RecipeService {
   getLatestReceipe():Observable<any>{
     return this.http.get('https://www.themealdb.com/api/json/v1/1/latest.php');
   }
+  addToFavourite(idMeal,uid,token){
+    uid=parseInt(uid);
+    let data=
+    {
+      'auth':{
+        'access_token':token,
+        'id':uid
+      },
+      'meal_id':idMeal
+    }
+    console.log(data);
+    return this.http.post("https://18.222.30.236/backend/users/add_favorites",JSON.stringify(data));
+  }
 }

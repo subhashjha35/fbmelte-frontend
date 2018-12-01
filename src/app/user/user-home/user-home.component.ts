@@ -21,15 +21,27 @@ export class UserHomeComponent implements OnInit {
   // myCarouselOptions={items: 3, dots: true, nav: true};
   latestRecipe;
   recommendedRecipe;
+  favouriteRecipeDetails;
+  favouriteRecipe;
+  favouriteItem;
   images = [''];
   userData;
   userId:string;
   constructor(private userService:UserService, private recipeService:RecipeService, private catService:CategoriesService){
+    this.favouriteRecipeDetails=[];
     this.userId=localStorage.getItem('userId');
     if(this.userId){
       this.userService.getProfile(this.userId).subscribe(data=>{
         this.userData=data;
         console.log(this.userData);
+        this.favouriteRecipe=this.userData.data.favorites;
+        console.log(this.userData.data.favorites);
+        this.favouriteRecipe.forEach(element => {
+          console.log(element.meal_id);
+          this.recipeService.getRecipe(element.meal_id).subscribe(data=>{this.favouriteRecipeDetails.push(data.meals[0])});
+          
+        });
+        console.log(this.favouriteRecipeDetails);
       });
     }
     this.recipeService.getLatestReceipe().subscribe(data=>{

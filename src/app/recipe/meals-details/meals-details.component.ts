@@ -17,6 +17,14 @@ export class MealsDetailsComponent implements OnInit {
       console.log(this.meal);
   });
   }
+  addToFavourite(idMeal){
+    let uid:string=localStorage.getItem('userId');
+    let token:string=localStorage.getItem('token');
+    console.log(uid+" "+token);
+    this.recipe.addToFavourite(idMeal,uid,token).subscribe(data=>{
+      console.log(data);
+    });
+  }
   ngOnInit() {
     this.route.params.subscribe(params=>{
       this.mealId=params["id"];

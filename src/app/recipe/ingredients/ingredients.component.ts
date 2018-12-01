@@ -11,7 +11,7 @@ export class IngredientsComponent implements OnInit {
   p: number = 1;
   constructor(private ingService:IngredientsService) { 
     this.ingService.get_ingredients().subscribe( data =>{
-      this.ingList=data;
+      this.ingList=data.data;
       console.log(this.ingList);
     });
   }

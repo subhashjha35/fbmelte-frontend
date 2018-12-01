@@ -4,6 +4,9 @@
         <img src="{{meal.strMealThumb}}" class="img-fluid img-thumbnail" alt="">
       </div>
       <div class="col-md-6 bg-faded">
+        <div class="float-right">
+          <button (click)="addToFavourite(meal.idMeal)" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Favourite</button>
+        </div>
         <h3>{{meal.strMeal}}</h3>
         Category: <a href="cat.html" class="text-success">{{meal.strCategory}}</a> Area: <a href="strArea.html" class="text-warning">{{meal.strArea}}</a>
         <p class="text-left">

@@ -1,74 +1,3 @@
-<!-- <div class="container">
-    <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="sliderItemList">
-        <ngu-tile *nguCarouselDef="let item; let i = index" style="width:50%; display:block;clear:both;float:none">
-            <h3 class="p-3 alert-warning">{{item.name}}</h3>
-            <ngu-carousel #myCarousel [inputs]="carouselTile" (carouselLoad)="carouselTileLoad(i)" [dataSource]="sliderItemList[i].mealsList">
-                <ngu-tile *nguCarouselDef="let item; let j = index" style="min-width:150px;">
-                    <div class="tile" style="position:relative;" [style.background-image]="'url(' + item.strMealThumb + ')'" style="background-position:center;background-size:auto 100%;min-height: 300px;">
-                        <a [routerLink]="['/meal',item.idMeal]" class="">
-                            <div class="tile_title">
-                                {{item.strMeal}}
-                            </div>
-                        </a>
-                    </div>
-                </ngu-tile>
-                <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
-                <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
-            </ngu-carousel>
-    
-        </ngu-tile>
-    </ngu-carousel>
-</div> -->
-
-<!-- <owl-carousel [options]="mySlideOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
-        <div class="item" *ngFor="let image of mySlideImages;let i = index">
-         <div>
-           <img src={{image}}/>
-         </div>
-        </div>
-       </owl-carousel> -->
-
-    <!-- <owl-carousel
-        [options]="{items: 3, dots: true, navigation: true}"
-        [items]="images"
-        [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let image of mySlideImages;let i = index">
-            <div class="thumbnail-image" [ngStyle]="{'background':'url(image)'}"><img src="{{image}}" alt=""></div>
-        </div>
-   </owl-carousel> -->
-
-
-   <!-- <div class="owl-carousel-holder">
-        <div class="slider-image-section">
-            <h2>Banner Slider Using Owl Casrousel</h2>
-            <owl-carousel
-                [options]="mySlideOptions"
-                [items]="images"
-                [carouselClasses]="['owl-theme', 'sliding']"
-            >
-                <div class="item" *ngFor="let image of mySlideImages;let i = index">
-                    <div>
-                        <img src={{image}}/>
-                    </div>
-                </div>
-            </owl-carousel>
-        </div>
-        <hr/>
-        <div class="carousel-section">
-                <h2>Image Carousel Using Owl Casrousel</h2>
-                <owl-carousel
-                    [options]="myCarouselOptions"
-                    [items]="images"
-                >
-                    <div class="item" *ngFor="let image of myCarouselImages;let i = index">
-                        <div>
-                            <img src={{image}}/>
-                        </div>
-                    </div>
-                </owl-carousel>
-        </div>
-    </div> -->
-
 <div class="pt-2 pb-2 rounded-0 jumbotron alert-warning border">
     <div class="container">
         <h3 class="text-center">Latest Meals</h3>
@@ -93,6 +22,21 @@
         [items]="recommendedRecipe"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div class="item" *ngFor="let item of recommendedRecipe">
+            <img src="{{item.strMealThumb}}" alt="">
+            <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
+        </div>
+        </owl-carousel>
+    </div>
+</div>
+<div class="pt-2 pb-2 rounded-0 alert-success jumbotron border">
+    <div class="container">
+        <h3 class="text-center">Favourite Meals</h3>
+        <owl-carousel
+        [options]="{navigation: false, loop:true, dots: true, margin:14,
+            responsive:{ '0':{ items: 1 }, '600':{ items: 3 }, '1000':{ items: 4 } }}"
+        [items]="favouriteRecipeDetails"
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div class="item" *ngFor="let item of favouriteRecipeDetails">
             <img src="{{item.strMealThumb}}" alt="">
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
