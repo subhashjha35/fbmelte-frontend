@@ -19,7 +19,9 @@
     "@angular/http": "^6.1.0",
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
+    "@angular/pwa": "^0.8.7",
     "@angular/router": "^6.1.0",
+    "@angular/service-worker": "^6.1.0",
     "@ngu/carousel": "^1.5.4",
     "@types/jquery": "^3.3.22",
     "angular-image-slider": "0.0.8",
@@ -36,6 +38,7 @@
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
     "script-loader": "^0.7.2",
+    "service-worker": "0.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

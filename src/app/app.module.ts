@@ -27,6 +27,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AreaComponent } from './recipe/area/area.component';
 import { AreaDetailsComponent } from './recipe/area/area-details/area-details.component';
 import { UserService } from './service/user.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { UserService } from './service/user.service';
     BrowserAnimationsModule,
     NguCarouselModule,
     OwlModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [RecipeService, UserService, CategoriesService],
   bootstrap: [AppComponent]
