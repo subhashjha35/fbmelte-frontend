@@ -10,7 +10,7 @@ interface ingModel
 })
 export class IngredientsService {
   get_ingredients():any{
-    return this.http.get("https://www.themealdb.com/api/json/v1/1/list.php?i=list");
+    return this.http.get("http://18.222.30.236/backend/ingredients/");
   }
   constructor(private http:HttpClient) { }
 }
