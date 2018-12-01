@@ -10,7 +10,7 @@ interface ingModel
 })
 export class IngredientsService {
   get_ingredients():any{
-    return this.http.get("http://18.222.30.236/backend/ingredients/");
+    return this.http.get("https://18.222.30.236/backend/ingredients/");
   }
   constructor(private http:HttpClient) { }
 }
