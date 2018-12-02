@@ -21,6 +21,7 @@ export class UserHomeComponent implements OnInit {
   // myCarouselOptions={items: 3, dots: true, nav: true};
   latestRecipe;
   recommendedRecipe;
+  recommendedRecipeItems;
   favouriteRecipeDetails;
   favouriteRecipe;
   favouriteItem;
@@ -28,6 +29,7 @@ export class UserHomeComponent implements OnInit {
   userData;
   userId:string;
   constructor(private userService:UserService, private recipeService:RecipeService, private catService:CategoriesService){
+    this.recommendedRecipeItems=[];
     this.favouriteRecipeDetails=[];
     this.userId=localStorage.getItem('userId');
     if(this.userId){
@@ -35,11 +37,12 @@ export class UserHomeComponent implements OnInit {
         this.userData=data;
         console.log(this.userData);
         this.favouriteRecipe=this.userData.data.favorites;
-        console.log(this.userData.data.favorites);
+        this.userData.data.preferences.forEach(e=>this.recommendedRecipeItems.push(e.name));
+        console.log(this.recommendedRecipeItems);
+        this.get_recommendation();
         this.favouriteRecipe.forEach(element => {
           console.log(element.meal_id);
           this.recipeService.getRecipe(element.meal_id).subscribe(data=>{this.favouriteRecipeDetails.push(data.meals[0])});
-          
         });
         console.log(this.favouriteRecipeDetails);
       });
@@ -48,7 +51,11 @@ export class UserHomeComponent implements OnInit {
       this.latestRecipe=data.meals;
       console.log(this.latestRecipe);
     })
-    this.catService.getCatDetails('Chicken').subscribe(data=>{
+    
+  }
+  get_recommendation(){
+    console.log(this.recommendedRecipeItems);
+    this.catService.getCatDetails(this.recommendedRecipeItems[0]).subscribe(data=>{
       this.recommendedRecipe= data.meals;
       console.log(this.recommendedRecipe);
     })

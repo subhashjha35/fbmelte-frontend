@@ -30,6 +30,7 @@ import { UserService } from './service/user.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SommerComponent } from './shared/sommer/sommer.component';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { SommerComponent } from './shared/sommer/sommer.component';
     NguCarouselModule,
     OwlModule,
     NgxPaginationModule,
+    NgHttpLoaderModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [RecipeService, UserService, CategoriesService],

@@ -7,10 +7,6 @@ form {
 h2 {
     margin: 0 0 15px;
 }
-.form-control, .login-btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
 .input-group-addon .fa {
     font-size: 18px;
 }
