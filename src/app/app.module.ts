@@ -29,6 +29,7 @@ import { AreaDetailsComponent } from './recipe/area/area-details/area-details.co
 import { UserService } from './service/user.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SommerComponent } from './shared/sommer/sommer.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { environment } from '../environments/environment';
     UserHomeComponent,
     IngredientsComponent,
     AreaComponent,
-    AreaDetailsComponent
+    AreaDetailsComponent,
+    SommerComponent
   ],
   imports: [
     BrowserModule,

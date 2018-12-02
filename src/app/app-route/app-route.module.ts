@@ -12,6 +12,7 @@ import { IngredientsComponent } from '../recipe/ingredients/ingredients.componen
 import { AreaComponent } from '../recipe/area/area.component';
 import { AreaDetailsComponent } from '../recipe/area/area-details/area-details.component';
 import { AuthGuard } from '../auth.guard';
+import { SommerComponent } from '../shared/sommer/sommer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,8 +25,10 @@ const routes: Routes = [
   { path: 'me', component: UserHomeComponent },
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'area', component: AreaComponent },
+  { path: 'subscribe', component: SommerComponent },
   { path: 'area/:areaName', component: AreaDetailsComponent },
   { path: 'profile', component: UserHomeComponent, canActivate: [AuthGuard]},
+
   { path: '**', component: HomeComponent },
 
 ];
