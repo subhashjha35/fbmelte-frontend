@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" *ngFor="let meal of meal">
+    <div class="row">
       <div class="col-md-6">
         <img src="{{meal.strMealThumb}}" class="img-fluid img-thumbnail" alt="">
       </div>
@@ -7,6 +7,7 @@
         <!-- <img src="assets/food_meals_logo.png" class="attach-logo" alt=""> -->
         <div class="float-right">
           <button (click)="addToFavourite(meal.idMeal)" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Favourite</button>
+          <a class="btn-sm btn btn-warning" href="{{route_url}}#ingredients">Ingredients</a>
         </div>
         <h3>{{meal.strMeal}}</h3>
         Category: <a href="cat.html" class="text-success">{{meal.strCategory}}</a> Area: <a href="strArea.html" class="text-info">{{meal.strArea}}</a>
@@ -20,6 +21,25 @@
           <a *ngIf="(meal.strSource!='')" href="{{meal.strSource}}" class="alert-success alert p-1 alert-link">{{meal.strSource}}</a>
         </div>
         <!-- <iframe width="560" height="315" [src]="meal.strYoutube | safe:'url'" frameborder="0"></iframe> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="ingredients">
+        <h3>Ingredients Detail</h3>
+        <table class="table">
+          <tr>
+            <th>name</th>
+            <th>Energy</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          <tr *ngFor="let ingr of meal.ingredients;let i = index">
+            <td>{{ingr}}</td>
+            <td>{{meal.calorie[i]}}</td>
+            <td>{{meal.measures[i]}}</td>
+            <td>{{meal.prices[i]}}</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

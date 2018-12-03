@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <div class="container">
+    <h3 class="text-center">Food By your Budget</h3>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <input type="number" [(ngModel)]="minValue" class="form-control" placeholder="Min Price">
+          </div>
+          <div class="form-group">
+            <input type="number"[(ngModel)]="maxValue" class="form-control" placeholder="Max Price">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success" (click)="searchFood()">Search Food</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let data of foodArr">
+      <a [routerLink]="['/meal',data.idMeal]">
+        <div class="card" style="overflow:hidden;">
+          <div class="card-body text-center p-1">
+            <img src="{{data.strMealThumb}}" alt="{{data.strMeal}}" class="img-fluid">
+          </div>
+          <h5 class="text-center" style="position:absolute;bottom:-10px;color:#e6e6e6; background:rgba(0,0,0,0.8);left:0px;width:100%;min-height:50px;">{{data.strMeal}}</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

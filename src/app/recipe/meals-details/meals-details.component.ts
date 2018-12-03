@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/service/recipe.service';
+import { PopupComponent } from 'src/app/shared/popup/popup.component';
+import { DialogService } from 'ng6-bootstrap-modal';
 
 @Component({
   selector: 'app-meals-details',
@@ -9,11 +11,12 @@ import { RecipeService } from 'src/app/service/recipe.service';
 })
 export class MealsDetailsComponent implements OnInit {
   mealId:number;
-  meal:{};
-  constructor(private route:ActivatedRoute, private recipe:RecipeService) { }
+  meal;
+  route_url;
+  constructor(private curRoute:Router,private dialogService:DialogService,private route:ActivatedRoute, private recipe:RecipeService) { this.meal=[]; }
   getMealDetails(mealId){
     this.recipe.getRecipe(mealId).subscribe(data => {
-      this.meal=data.meals;
+      this.meal=data.data;
       console.log(this.meal);
   });
   }
@@ -25,11 +28,26 @@ export class MealsDetailsComponent implements OnInit {
       console.log(data);
     });
   }
+
+  showIngredientDetails(){
+    let disposable = this.dialogService.addDialog(PopupComponent, {
+      title:'Confirm title', 
+      message:'Confirm message'})
+      .subscribe((isConfirmed)=>{
+          if(isConfirmed) {
+            alert('accepted');
+          }
+          else {
+            alert('declined');
+          }
+      });
+  }
   ngOnInit() {
     this.route.params.subscribe(params=>{
       this.mealId=params["id"];
     });
     this.getMealDetails(this.mealId);
+    this.route_url=this.curRoute.url;
   }
 
 }

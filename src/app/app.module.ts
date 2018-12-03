@@ -34,6 +34,7 @@ import { PopupComponent } from './shared/popup/popup.component';
 import { BootstrapModalModule, DialogService } from 'ng6-bootstrap-modal';
 import { SearchComponent } from './recipe/search/search.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { BudgetComponent } from './recipe/budget/budget.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AreaDetailsComponent,
     SommerComponent,
     PopupComponent,
-    SearchComponent
+    SearchComponent,
+    BudgetComponent
   ],
   imports: [
     BrowserModule,

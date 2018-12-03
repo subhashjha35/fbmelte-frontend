@@ -15,10 +15,13 @@ export class RecipeService {
     return this.http.get('https://www.themealdb.com/api/json/v1/1/random.php');
   }
   getRecipe(id): Observable<any> {
-    return this.http.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id);
+    return this.http.get('https://18.222.30.236/backend/meals/get_meal/'+id+'/');
   }
   getMealsByName(name):Observable<any>{
     return this.http.get('https://www.themealdb.com/api/json/v1/1/search.php?s='+name);
+  }
+  getMealsByPrice(min_price,max_price):Observable<any>{
+    return this.http.get('https://18.222.30.236/backend/meals/search_meal/'+min_price+'/'+max_price+'/');
   }
   getLatestReceipe():Observable<any>{
     return this.http.get('https://www.themealdb.com/api/json/v1/1/latest.php');

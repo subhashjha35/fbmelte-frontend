@@ -18,8 +18,11 @@
               <a [routerLink]="['/ingredients']" routerLinkActive="text-white" class="nav-link">Ingredients</a>
             </li>
             <li class="nav-item">
-                <a [routerLink]="['/area']" routerLinkActive="text-white" class="nav-link">Area Specific</a>
-              </li>
+              <a [routerLink]="['/area']" routerLinkActive="text-white" class="nav-link">Area Specific</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/budget']" routerLinkActive="text-white" class="nav-link">Budget</a>
+            </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item" *ngIf="(!isLoggedIn)">

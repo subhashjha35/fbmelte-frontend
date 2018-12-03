@@ -14,6 +14,7 @@ import { AreaDetailsComponent } from '../recipe/area/area-details/area-details.c
 import { AuthGuard } from '../auth.guard';
 import { SommerComponent } from '../shared/sommer/sommer.component';
 import { SearchComponent } from '../recipe/search/search.component';
+import { BudgetComponent } from '../recipe/budget/budget.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'area', component: AreaComponent },
   { path: 'subscribe', component: SommerComponent },
   { path: 'area/:areaName', component: AreaDetailsComponent },
+  { path: 'budget', component: BudgetComponent },
   { path: 'search/:name', component: SearchComponent },
   { path: 'profile', component: UserHomeComponent, canActivate: [AuthGuard]},
 
