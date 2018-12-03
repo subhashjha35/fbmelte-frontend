@@ -1,8 +1,8 @@
 <!-- <app-carousel></app-carousel> -->
 <div id="welcome-box"class="jumbotron rounded-0 p-5 bg-white text-center" style="background-color:rgb(236, 211, 128) !important; background-position:center;background-attachment:fixed; background-size:100% 100%;background-image:url('assets/img/vol1.png')">
   <form action="" class="col-lg-6 offset-lg-3 p-5 mb-5 mt-5">
-    <div class="row m-5">
-      <div class="input-group m-5 pb-5 pt-5">
+    <div class="row mb-5">
+      <div class="input-group m-5 pb-5">
         <input type="text" class="form-control form-control-lg" placeholder="Search Food Recipe">
         <div class="input-group-append">
           <button class="btn btn-success" type="button"><i class="fa fa-search fa-2x"></i></button>
@@ -28,6 +28,21 @@
     </div>
     <hr class="my-2">
     <div class="row">
+      <!-- <div class="col-md-12">
+            <ng-select 
+              [(ngModel)]="strSearchArr"
+              [items]="allMeals"
+              bindLabel="strMeal"
+              placeholder="Search Meal of Your choice"
+              [virtualScroll]="true"
+              (change)="getMeal();"
+              style="padding:12px;border:1px solid #ccc"
+              >
+            </ng-select>
+            <div class="input-group-append">
+              <button class="btn btn-success" (click)="goToSearch()" type="button"><i class="fa fa-search"></i></button>
+            </div>
+      </div> -->
       <div class="input-group">
         <input [(ngModel)]="strSearch" type="text" class="form-control form-control-lg" placeholder="Search Food Recipe">
         <div class="input-group-append">

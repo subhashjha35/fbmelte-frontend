@@ -33,6 +33,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { PopupComponent } from './shared/popup/popup.component';
 import { BootstrapModalModule, DialogService } from 'ng6-bootstrap-modal';
 import { SearchComponent } from './recipe/search/search.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { SearchComponent } from './recipe/search/search.component';
     OwlModule,
     NgxPaginationModule,
     NgHttpLoaderModule.forRoot(),
+    NgSelectModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BootstrapModalModule.forRoot({ container:document.body })
   ],

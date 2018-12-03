@@ -7,7 +7,7 @@
         [items]="latestRecipe"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div class="item" *ngFor="let item of latestRecipe">
-            <img src="{{item.strMealThumb}}" alt="">
+            <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
         </owl-carousel>
@@ -22,7 +22,7 @@
         [items]="recommendedRecipe"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div class="item" *ngFor="let item of recommendedRecipe">
-            <img src="{{item.strMealThumb}}" alt="">
+            <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
         </owl-carousel>
@@ -37,34 +37,9 @@
         [items]="favouriteRecipeDetails"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div class="item" *ngFor="let item of favouriteRecipeDetails">
-            <img src="{{item.strMealThumb}}" alt="">
+            <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
         </owl-carousel>
     </div>
 </div>
-
-<!-- <modal title="Modal title"
-        cancelButtonLabel="cancel"
-        submitButtonLabel="submit"
-        modalClass="modal-lg modal-sm any-other-css-class"
-        [hideCloseButton]="true|false"
-        [closeOnEscape]="true|false"
-        [closeOnOutsideClick]="true|false"
-        (onOpen)="actionOnOpen()"
-        (onClose)="actionOnClose()"
-        (onSubmit)="actionOnSubmit()">
- 
-    <modal-header>
-        Modal header content goes there.
-    </modal-header>
- 
-    <modal-content>
-        Modal body content goes there.
-    </modal-content>
- 
-    <modal-footer>
-        Modal footer content goes there.
-    </modal-footer>
-        
-</modal> -->
