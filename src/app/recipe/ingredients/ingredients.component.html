@@ -1,9 +1,11 @@
 <div class="list container">
   <div class="row">
-    <div class="card col-md-3" *ngFor="let item of ingList | paginate: { itemsPerPage: 12, currentPage: p }">
-      <div class="card-body">
-        <img src="https://www.themealdb.com/images/ingredients/{{item.strIngredient}}.png" class="img-fluid img-thumbnail" alt="">
-        <span class="h5">{{item.strIngredient}}</span><div class="font-weight-bold float-right text-info">{{item.floatPrice|currency:'$'}}</div>
+    <div class="col-md-2" *ngFor="let item of ingList | paginate: { itemsPerPage: 12, currentPage: p }">
+      <div class="card mb-md-3">
+        <div class="card-body">
+            <img src="https://www.themealdb.com/images/ingredients/{{item.strIngredient}}.png" class="img-fluid" alt="">
+            <span class="h6">{{item.strIngredient}}</span><div class="font-weight-bold float-right text-info">{{item.floatPrice|currency:'$'}}</div>
+          </div>
       </div>
     </div>
   </div>

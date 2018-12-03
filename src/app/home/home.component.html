@@ -12,7 +12,7 @@
   </form>
 </div>
 <div id="welcome-box"class="jumbotron rounded-0 bg-white text-center mb-0" >
-  <form action="" class="col-lg-6 offset-lg-3">
+  <div class="col-lg-6 offset-lg-3">
     <div class="row text-white p-2 bg-warning" style="border-radius:5px 5px 0 0;display:inline-block">
       <h2>Food and Budget Management</h2>
     </div>
@@ -29,13 +29,13 @@
     <hr class="my-2">
     <div class="row">
       <div class="input-group">
-        <input type="text" class="form-control form-control-lg" placeholder="Search Food Recipe">
+        <input [(ngModel)]="strSearch" type="text" class="form-control form-control-lg" placeholder="Search Food Recipe">
         <div class="input-group-append">
-          <button class="btn btn-success" type="button"><i class="fa fa-search fa-2x"></i></button>
+          <button class="btn btn-success" (click)="goToSearch()" type="button"><i class="fa fa-search fa-2x"></i></button>
         </div>
       </div>
     </div>
-  </form>
+  </div>
 </div>
 <div class="container-fluid">
   <div class="row">

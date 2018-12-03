@@ -18,7 +18,6 @@ import { CategoriesComponent } from './recipe/categories/categories.component';
 import { CatDetailsComponent } from './recipe/categories/cat-details/cat-details.component';
 import { CatHomeComponent } from './recipe/categories/cat-home/cat-home.component';
 import { SafePipe } from './pipes/safe.pipe';
-import { CarouselComponent } from './tools/carousel/carousel.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
 import { NguCarouselModule } from '@ngu/carousel';
 import { OwlModule } from 'ngx-owl-carousel';
@@ -31,7 +30,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SommerComponent } from './shared/sommer/sommer.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
-
+import { PopupComponent } from './shared/popup/popup.component';
+import { BootstrapModalModule, DialogService } from 'ng6-bootstrap-modal';
+import { SearchComponent } from './recipe/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,12 +47,13 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     CatDetailsComponent,
     CatHomeComponent,
     SafePipe,
-    CarouselComponent,
     UserHomeComponent,
     IngredientsComponent,
     AreaComponent,
     AreaDetailsComponent,
-    SommerComponent
+    SommerComponent,
+    PopupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -64,9 +66,11 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     OwlModule,
     NgxPaginationModule,
     NgHttpLoaderModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BootstrapModalModule.forRoot({ container:document.body })
   ],
   providers: [RecipeService, UserService, CategoriesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent],
 })
 export class AppModule { }

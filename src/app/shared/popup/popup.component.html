@@ -1,0 +1,20 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+     <div class="modal-header">
+       <h4 class="modal-title">{{title || 'Confirm'}}</h4>
+       <button type="button" class="close" (click)="close()" >&times;</button>
+     </div>
+     <div class="modal-body">
+       <div>You can add your prefered category.</div>
+        <div class="form-group">
+          <select [(ngModel)]="catName" name="" id="" class="form-control">
+            <option value="{{cat.strCategory}}" *ngFor="let cat of catData">{{cat.strCategory}}</option>
+          </select>
+        </div>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
+       <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+     </div>
+   </div>
+</div>

@@ -20,14 +20,7 @@ export class UserService {
     return !!localStorage.getItem('token');
   }
   registerUser(userData){
-    let httpHeaders = new HttpHeaders({
-      'Content-Type' : 'application/json',
-      'Cache-Control': 'no-cache'
-    }); 
-    let options = {
-      headers: httpHeaders
-    };
-    return this.http.post("https://18.222.30.236/backend/users/register/", userData, options);
+    return this.http.post("https://18.222.30.236/backend/users/register/", userData);
   }
 
   loginUser(userData):any{
@@ -36,6 +29,10 @@ export class UserService {
 
   getProfile(id):any{
     return this.http.get("https://18.222.30.236/backend/users/"+id+"/");
+  }
+
+  addPreference(data):any{
+    return this.http.post("http://18.222.30.236/backend/users/add_preferences",data);
   }
   logout() : void {
     localStorage.removeItem('token');

@@ -6,6 +6,11 @@ export interface User{
   name:string;
   email:string;
   password:string;
+  date_of_birth:string;
+  nationality:string;
+  surname:string;
+  gender:number;
+  profile_img:string;
 }
 @Component({
   selector: 'app-register',
@@ -19,14 +24,28 @@ export class RegisterComponent implements OnInit {
   success;
   formArray;
   userCols;
-  userData:User={name:null,email:null,password:null};
-  constructor(private formBuilder:FormBuilder, private userService:UserService) { }
+  userData:User;
+  userDataString;
+  constructor(private formBuilder:FormBuilder, private userService:UserService) { 
+    this.userData={
+      name:"",
+      nationality:"",
+      surname:"",
+      profile_img:"",
+      email:"",
+      password:"",
+      date_of_birth:"",
+      gender:0,
+    }
+  }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      date_of_birth: ['', [Validators.required]],
+      gender: ['', [Validators.required,]]
   });
 }
 
@@ -35,10 +54,15 @@ export class RegisterComponent implements OnInit {
     this.formArray =this.registerForm.controls;
     console.log(this.formArray);
     Object.keys(this.formArray).forEach(key => {
-      // console.log(this.userData);
+      
       this.userData[key] = this.formArray[key].value;
     });
+    this.userData.surname="not provided";
+    this.userData.nationality="not provided";
+    this.userData.profile_img="not provided";
     console.log(this.userData);
+    this.userDataString=JSON.stringify(this.userData);
+    console.log(this.userDataString);
   }  
   onSubmit() {
     this.submitted = true;
@@ -48,7 +72,7 @@ export class RegisterComponent implements OnInit {
         return;
     }
     this.data();
-    this.userService.registerUser(this.userData).subscribe(data => {
+    this.userService.registerUser(this.userDataString).subscribe(data => {
       console.log("Request completed");
       this.success="Registered Successfully!!!";
       this.error=null;

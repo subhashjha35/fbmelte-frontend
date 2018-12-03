@@ -4,6 +4,8 @@ import { RecipeService } from 'src/app/service/recipe.service';
 import { CategoriesService } from 'src/app/service/categories.service';
 import { UserService } from 'src/app/service/user.service';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
+import { DialogService } from 'ng6-bootstrap-modal';
+import { PopupComponent } from 'src/app/shared/popup/popup.component';
 
 interface sliderModel{
   name:string;
@@ -28,7 +30,7 @@ export class UserHomeComponent implements OnInit {
   images = [''];
   userData;
   userId:string;
-  constructor(private userService:UserService, private recipeService:RecipeService, private catService:CategoriesService){
+  constructor(private dialogService:DialogService,private userService:UserService, private recipeService:RecipeService, private catService:CategoriesService){
     this.recommendedRecipeItems=[];
     this.favouriteRecipeDetails=[];
     this.userId=localStorage.getItem('userId');
@@ -37,6 +39,7 @@ export class UserHomeComponent implements OnInit {
         this.userData=data;
         console.log(this.userData);
         this.favouriteRecipe=this.userData.data.favorites;
+        if(!this.userData.data.preferences.length){console.log(this.userData.data.preferences.length);this.showConfirm();}
         this.userData.data.preferences.forEach(e=>this.recommendedRecipeItems.push(e.name));
         console.log(this.recommendedRecipeItems);
         this.get_recommendation();
@@ -60,7 +63,26 @@ export class UserHomeComponent implements OnInit {
       console.log(this.recommendedRecipe);
     })
   }
-  ngOnInit(){
 
+  showConfirm() {
+    let disposable = this.dialogService.addDialog(PopupComponent, {
+      title:'Confirm title', 
+      message:'Confirm message'})
+      .subscribe((isConfirmed)=>{
+          //We get dialog result
+          if(isConfirmed) {
+            alert('accepted');
+          }
+          else {
+            alert('declined');
+          }
+      });
+    //We can close dialog calling disposable.unsubscribe();
+    //If dialog was not closed manually close it by timeout
+    // setTimeout(()=>{
+    //     disposable.unsubscribe();
+    // },10000);
+  }
+  ngOnInit(){
   }
 }

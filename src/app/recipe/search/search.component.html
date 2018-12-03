@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center">
+          Total Result Found : {{searchResultCount}}
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="border mt-2 mb-2 p-3 col-md-6 offset-md-3 col-12" *ngFor="let res of searchResult">
+      <div class="row">
+        <div class="col-3">
+          <a [routerLink]="['/meal/'+res.idMeal]"><img src="{{res.strMealThumb}}" class="img-fluid" alt=""></a>
+        </div>
+        <div class="col-9">
+          <a [routerLink]="['/meal/'+res.idMeal]" class="text-muted"><h3>{{res.strMeal}}</h3></a>
+          <div>
+            <a class="btn btn-sm mr-1 mb-1 btn-success">{{res.strCategory}}</a>
+            <a class="btn btn-sm mr-1 mb-1 btn-info">{{res.strArea}}</a>
+          </div>
+          <a class="btn btn-sm mr-1 btn-warning" *ngIf="(res.strTags)">{{"Tags : "}}{{res.strTags}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
