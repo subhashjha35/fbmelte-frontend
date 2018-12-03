@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-md-12" id="ingredients">
-        <h3>Ingredients Detail</h3>
+        <h3>Ingredients Detail <span class="alert-warning">{{meal.TotalPrice|currency:'$'}}</span></h3>
         <table class="table">
           <tr>
             <th>name</th>
@@ -37,7 +37,7 @@
             <td>{{ingr}}</td>
             <td>{{meal.calorie[i]}}</td>
             <td>{{meal.measures[i]}}</td>
-            <td>{{meal.prices[i]}}</td>
+            <td>{{meal.prices[i]|currency:'$'}}</td>
           </tr>
         </table>
       </div>

@@ -32,7 +32,7 @@ export class UserService {
   }
 
   addPreference(data):any{
-    return this.http.post("http://18.222.30.236/backend/users/add_preferences",data);
+    return this.http.post("https://18.222.30.236/backend/users/add_preferences",data);
   }
   logout() : void {
     localStorage.removeItem('token');

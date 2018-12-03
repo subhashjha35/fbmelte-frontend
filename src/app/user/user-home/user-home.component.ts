@@ -17,10 +17,6 @@ interface sliderModel{
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent implements OnInit {
-  // mySlideImages = [1,2,3].map((i)=> `https://picsum.photos/640/480?image=${i}`);
-  // myCarouselImages =[1,2,3,4,5,6].map((i)=>`https://picsum.photos/640/480?image=${i}`);
-  // mySlideOptions={items: 1, dots: true, nav: false};
-  // myCarouselOptions={items: 3, dots: true, nav: true};
   latestRecipe;
   recommendedRecipe;
   recommendedRecipeItems;
@@ -40,12 +36,17 @@ export class UserHomeComponent implements OnInit {
         console.log(this.userData);
         this.favouriteRecipe=this.userData.data.favorites;
         if(!this.userData.data.preferences.length){console.log(this.userData.data.preferences.length);this.showConfirm();}
-        this.userData.data.preferences.forEach(e=>this.recommendedRecipeItems.push(e.name));
+        this.userData.data.preferences.forEach(e=>this.recommendedRecipeItems.push(e.meal_category_id));
         console.log(this.recommendedRecipeItems);
         this.get_recommendation();
-        this.favouriteRecipe.forEach(element => {
+
+        console.log(this.favouriteRecipe);
+        console.log(this.userData.data);
+        this.userData.data.favorites.forEach(element => {
           console.log(element.meal_id);
-          this.recipeService.getRecipe(element.meal_id).subscribe(data=>{this.favouriteRecipeDetails.push(data.meals[0])});
+          this.recipeService.getRecipe(element.meal_id).subscribe(data=>{ 
+            console.log(data);
+            this.favouriteRecipeDetails.push(data.data);});
         });
         console.log(this.favouriteRecipeDetails);
       });
@@ -65,7 +66,18 @@ export class UserHomeComponent implements OnInit {
   }
 
   showConfirm() {
-    
+    let disposable = this.dialogService.addDialog(PopupComponent, {
+      title:'Confirm title', 
+      message:'Confirm message'})
+      .subscribe((isConfirmed)=>{
+          //We get dialog result
+          if(isConfirmed) {
+            alert('accepted');
+          }
+          else {
+            alert('declined');
+          }
+      });
   }
   ngOnInit(){
   }

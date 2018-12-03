@@ -31,7 +31,7 @@ export class PopupComponent extends DialogComponent<PopUpModel, boolean> impleme
     
     this.prefData={
       auth:{
-        'access-token':localStorage.getItem('token'),
+        'access_token':localStorage.getItem('token'),
         'id':parseInt(localStorage.getItem('userId'))
       },
       'meal_category_id': this.catName
