@@ -33,6 +33,7 @@ export class UserHomeComponent implements OnInit {
     if(this.userId){
       this.userService.getProfile(this.userId).subscribe(data=>{
         this.userData=data;
+        this.userService.userName.next(data.data.name);
         console.log(this.userData);
         this.favouriteRecipe=this.userData.data.favorites;
         if(!this.userData.data.preferences.length){console.log(this.userData.data.preferences.length);this.showConfirm();}

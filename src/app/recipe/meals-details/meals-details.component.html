@@ -19,6 +19,8 @@
           <a *ngIf="(meal.strTags!=null)" href="#" class="alert-success alert p-1 alert-link">{{meal.strTags}}</a>
           <h4>Source</h4>
           <a *ngIf="(meal.strSource!='')" href="{{meal.strSource}}" class="alert-success alert p-1 alert-link">{{meal.strSource}}</a>
+          <h4>Video</h4>
+          <a *ngIf="(meal.strSource!='')" href="{{meal.strYoutube}}" class="alert-danger alert p-1 alert-link"><i class="fa fa-2x fa-youtube"></i></a>
         </div>
         <!-- <iframe width="560" height="315" [src]="meal.strYoutube | safe:'url'" frameborder="0"></iframe> -->
       </div>

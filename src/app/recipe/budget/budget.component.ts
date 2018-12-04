@@ -9,9 +9,11 @@ import { RecipeService } from 'src/app/service/recipe.service';
 export class BudgetComponent implements OnInit {
   foodArr;
   minValue;
-  maxValue
+  maxValue;
+  p: number = 1;
   constructor(private recipeService:RecipeService) { }
   searchFood(){
+    this.foodArr=[];
     this.recipeService.getMealsByPrice(this.minValue,this.maxValue).subscribe(data=>{
       this.foodArr=data.data;
       console.log(this.foodArr);

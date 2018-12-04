@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class UserService {
 
   isLoginSubject = new BehaviorSubject<boolean>(this.hasToken());
+  userName= new BehaviorSubject<string>(null);
   constructor(private http:HttpClient, private route:Router ) { 
   }
   
@@ -36,7 +37,9 @@ export class UserService {
   }
   logout() : void {
     localStorage.removeItem('token');
+    localStorage.removeItem('userId');
     this.isLoginSubject.next(false);
+    this.userName.next(null);
     this.http.post("https://18.222.30.236/backend/users/logout/",{"access_token":localStorage.getItem('token')});
     this.route.navigate(['\login']);
   }

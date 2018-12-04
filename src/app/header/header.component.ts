@@ -24,7 +24,8 @@ export class HeaderComponent implements OnInit {
       this.userService.getProfile(this.userId).subscribe(data=>{
         this.userData=data;
         console.log(this.userData);
-        this.userName=data.data.name;
+        this.userService.userName.subscribe(name => this.userName=name);
+        console.log(this.userName);
       });
     }
   }

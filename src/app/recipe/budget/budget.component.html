@@ -18,15 +18,22 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-3" *ngFor="let data of foodArr">
-      <a [routerLink]="['/meal',data.idMeal]">
-        <div class="card" style="overflow:hidden;">
-          <div class="card-body text-center p-1">
-            <img src="{{data.strMealThumb}}" alt="{{data.strMeal}}" class="img-fluid">
-          </div>
-          <h5 class="text-center" style="position:absolute;bottom:-10px;color:#e6e6e6; background:rgba(0,0,0,0.8);left:0px;width:100%;min-height:50px;">{{data.strMeal}}</h5>
+    <div class="col-md-6 offset-md-3 text-center">Total Result Found : {{foodArr.length}}</div>
+  </div>
+  <div class="list container">
+    <div class="row">
+        <div class="col-md-3 pt-md-3" *ngFor="let data of foodArr | paginate: { itemsPerPage: 12, currentPage: p }">
+          <a [routerLink]="['/meal',data.idMeal]">
+            <div class="card" style="overflow:hidden;">
+              <div class="card-body text-center p-1">
+                <img src="{{data.strMealThumb}}" alt="{{data.strMeal}}" class="img-fluid">
+              </div>
+              <h5 class="text-center" style="position:absolute;bottom:-10px;color:#e6e6e6; background:rgba(0,0,0,0.8);left:0px;width:100%;min-height:50px;">{{data.strMeal}}</h5>
+              <div style="position:absolute;right:0px;" class="alert-warning p-2 font-weight-bold rounded">{{data.TotalPrice|currency:'$'}}</div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      </div>
+      <pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
   </div>
 </div>

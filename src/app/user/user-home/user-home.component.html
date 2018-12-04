@@ -6,7 +6,7 @@
             responsive:{ '0':{ items: 1 }, '600':{ items: 3 }, '1000':{ items: 4 } }}"
         [items]="latestRecipe"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let item of latestRecipe">
+        <div class="item rounded" style="overflow:hidden;" *ngFor="let item of latestRecipe">
             <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
@@ -21,7 +21,7 @@
             responsive:{ '0':{ items: 1 }, '600':{ items: 3 }, '1000':{ items: 4 } }}"
         [items]="recommendedRecipe"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let item of recommendedRecipe">
+        <div class="item rounded" style="overflow:hidden;" *ngFor="let item of recommendedRecipe">
             <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
@@ -36,7 +36,7 @@
             responsive:{ '0':{ items: 1 }, '600':{ items: 3 }, '1000':{ items: 4 } }}"
         [items]="favouriteRecipeDetails"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let item of favouriteRecipeDetails">
+        <div class="item rounded" style="overflow:hidden;" *ngFor="let item of favouriteRecipeDetails">
             <a [routerLink]="['/meal/',item.idMeal]"><img src="{{item.strMealThumb}}" alt=""></a>
             <h3 class="text-center float-bottom">{{item.strMeal}}</h3>
         </div>
