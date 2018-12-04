@@ -1,6 +1,6 @@
 {
-  "name": "fbm",
-  "short_name": "fbm",
+  "name": "Food & Budget Management",
+  "short_name": "FBM",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -70,7 +70,7 @@ import { BudgetComponent } from './recipe/budget/budget.component';
     NgxPaginationModule,
     NgHttpLoaderModule.forRoot(),
     NgSelectModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     BootstrapModalModule.forRoot({ container:document.body })
   ],
   providers: [RecipeService, UserService, CategoriesService],
